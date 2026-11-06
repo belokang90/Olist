@@ -21,6 +21,7 @@ Olist/
 ├── app.py                 # 실행 파일
 ├── requirements.txt       # 필요한 Python 라이브러리
 ├── .gitignore
+├── setup_data.py           # 분할 주문 데이터 복원 및 검증
 ├── views/                 # 화면별 코드
 │   ├── home.py
 │   ├── analysis.py
@@ -37,7 +38,7 @@ Olist/
 ## 실행 방법 (Windows / VS Code)
 
 1. 저장소를 내려받습니다.
-2. **`data/orders.parquet` 및 `data/items.parquet`가 존재하는지 확인합니다.** 현재 GitHub 등록본에는 이 두 파일이 없을 수 있으므로 아래 자료 준비를 참고하세요.
+2. 크기가 큰 주문 자료 2개는 GitHub의 `data/packed/`에 분할 저장되어 있습니다. 다음 명령으로 원본 파일을 복원합니다: `py -3.12 setup_data.py`.
 3. VS Code에서 저장소 폴더를 열고 터미널에서 아래 명령어를 차례로 실행합니다.
 
 ```powershell
@@ -63,7 +64,7 @@ py -3.12 -m venv .venv
 
 자료 출처(수업용 Google Drive 원본 폴더): [Olist 실습 자료](https://drive.google.com/drive/folders/1E85eBWLumgiQl5h05XCullIBE9N9qbke)
 
-특히 주문 데이터 2개가 없으면 **데이터 분석 메뉴는 실행할 수 없습니다.** 두 파일은 Drive 실습 자료의 `olist_dashboard/data` 폴더에서 내려받아 넣으세요.
+주문 데이터 2개가 없으면 **데이터 분석 메뉴는 실행할 수 없습니다.** 저장소 전체를 내려받았다면 `py -3.12 setup_data.py`를 한 번 실행해 `orders.parquet`, `items.parquet`를 복원할 수 있습니다. 복원 과정은 SHA-256으로 원본과 일치하는지 검사합니다. 데이터 파일을 임의로 고치지 않습니다.
 
 ## 학습 모델
 
